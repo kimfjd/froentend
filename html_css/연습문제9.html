@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        .main{
+            width: 304px;
+            height: 390px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+        .logo{
+            margin: 28px;
+            width: 228px;
+            height: 44px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: white;
+        }
+        .logo:hover{
+            cursor: pointer;
+        }
+        .icon,.or{
+            position: relative;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: #504444;
+        }
+        .icon{
+            top: -7px;
+            font-size: 14px;
+        }
+        .or{
+            top: -17px;
+            font-size: 16px;
+        }
+        .icon_g{
+            position: relative;
+            top: 4px; 
+        }
+        input{
+            background-color: #eaeaea;
+            border: none; 
+            outline: none; 
+            width: 228px;
+            height: 44px;
+        }
+        .password{
+            position: relative;
+            top:10px;
+        }
+        .login{
+            position: relative;
+            width: 228px;
+            height: 44px;
+            color: #ffffff;
+            background-color: #373F3C;
+            font-size: 14px;
+            font-family: "Roboto", sans-serif;
+            text-align: center;
+            top: 30px;
+        }
+        .login:hover{
+            cursor: pointer;
+        }
+        .footer{
+            position: relative;
+            top: 49px;
+        }
+        .pwdforgot{
+            font-family: "Roboto", sans-serif;
+            font-size: 14px;
+            color: #2c3432;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <button class="logo">
+            <p class="icon">
+                <svg class="icon_g" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 488 512"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg>
+                 Log in with Google
+            </p>
+        </button>
+        
+        <p class="or">or</p>
+        <div class="insert">
+            <input calss="userid" type="text" name="idbox" placeholder="Username">
+            <input class="password" type="password" name="idbox" placeholder="password">
+        </div>
+        <button class="login">Login</button>
+        <div class="footer">
+            <a class="pwdforgot" href="https://www.naver.com">Forgot your password?</a>
+        </div>
+    </div>
+</body>
+</html>

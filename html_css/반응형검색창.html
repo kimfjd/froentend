@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        .main{
+            height: 3000px;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+        /* 999px 이하 화면 크기에서는 햄버거 메뉴 보이기 */
+        @media (max-width: 990px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: -9px;
+                left: 0;
+                width: 100%;
+                height: 40%;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                
+            }
+            nav.is-active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+            }
+            
+            .se{
+                display: block;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                padding: 10px;
+                border: none;
+                background-color: transparent;
+            }
+            .se-box {
+                width: 30px;
+                height: 24px;
+                display: inline-block;
+                position: relative;
+            }
+            .se-inner {
+                display: block;
+                top: 50%;
+                margin-top: -2px;
+            }
+            .se-inner, .se-inner::before, .se-inner::after {
+                width: 30px;
+                height: 30px;
+                position: relative;
+                background-image: url(./images/스크린샷\ 2024-04-18\ 170739.png);
+                background-repeat: no-repeat;
+                background-size: 26px 26px;
+            }
+            .se.is-active .se-inner {
+                background-color: transparent;
+            }
+            
+            .se.is-active .se-inner::before {
+                transform: rotate(-45deg);
+                top: 0;
+            }
+            .se.is-active .se-inner::after {
+                transform: rotate(45deg);
+                bottom: 0;
+            }
+            .input-box{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                padding: 0 16px;
+                box-sizing: border-box;
+                background-color: var(--seed-scale-color-gray-00);
+                display: flex;
+                justify-content: center;
+                top:1px;
+            }
+            .co{
+                display: block;
+                margin-right: 16px;
+                position: relative;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .ser {
+                width: 100%; 
+                line-height: 1.36;
+                font-size: 16px;
+                letter-spacing: -1%;
+                border: none;
+                outline: none;
+                margin: 16px 0;
+                padding: 9px 12px;
+                box-sizing: border-box;
+                height: 40px;
+                color: var(--seed-scale-color-gray-900);
+                background-color: #F2F3F6;
+                border-radius: 8px 8px 8px 8px;
+            }
+            .cancell{
+                line-height: 1.36;
+                font-size: 16px;
+                letter-spacing: -1%;
+                color: var(--seed-scale-color-gray-900);
+                white-space: nowrap;
+                cursor: pointer;
+                appearance: none;
+                border: 0;
+                background: none;
+                padding: 0;
+                border-radius: 6px;
+                box-sizing: border-box;
+                text-align: center;
+                font-weight: 700;
+                margin: 16px 0;
+                text-decoration: none;
+            }
+            .sec{
+                position: relative;
+                transform: translateY(0);
+                background-color: var(--seed-scale-color-gray-00);
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                overflow: hidden;
+                transform: translateY(-1.6rem);
+                padding: 8px 16px;
+                box-sizing: border-box;
+                top:58px;
+            }
+            .recom{
+                line-height: 1.32;
+                letter-spacing: -2%;
+                font-weight: 700;
+                line-height: 1.4;
+                font-size: 18px;
+                margin: 0;
+                padding-top: 4px;
+                padding-right: 0;
+                padding-bottom: 4px;
+                padding-left: 0;
+                color: gray;
+            }
+            .item-box{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+            .item{
+                line-height: 1.32;
+                font-size: 18px;
+                letter-spacing: -2%;
+                outline: 0;
+                margin: 0;
+                width: 50%;
+                padding: 16px 0;
+                border-bottom: 1px solid #dcdcdc;
+                cursor: pointer;
+                list-style: none;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-font-smoothing: antialiased;
+            }
+            .sec-background{
+                background: rgba(23, 23, 26);
+                opacity: .5;
+                position: absolute;
+                width: 100%;
+                height: 60vh;
+                top: 295px;
+            }
+        }
+
+/* 990px 이상 화면 크기에서는 네비게이션 메뉴 보이기 */
+@media (min-width: 990px) {
+  nav {
+    display: flex;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+  .se {
+    display: none;
+  }
+  .cancell{
+    display: none;
+  }
+  .ser{
+    width: 288px;
+    height: 40px;
+    line-height: 1.36;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: #F2F3F6;
+    margin: 16px 0;
+    padding: 9px 12px;
+    border: none;
+    outline: none;
+    border-radius: 8px 8px 8px 8px;
+  }
+  .sec{
+    display: none;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <button class="se">
+          <span class="se-box">
+            <span class="se-inner"></span>
+          </span>
+        </button>
+        <nav>
+            <span class="input-box">
+                <form class="co">
+                   <input type="search" class="ser" placeholder="물품이나 동네를 검색해보세요" value=""> 
+                </form>
+                <button class="cancell">취소</button>
+             
+            </span>
+            <section class="sec">
+                <h1 class="recom">추천</h1>   
+                <ul class="item-box">
+                    <li class="item">자전거</li>
+                    <li class="item">잠실 냉장고</li>
+                    <li class="item">화분</li>
+                    <li class="item">홍대 쇼파</li>
+                    <li class="item">키즈카페</li>
+                    <li class="item">죽전 치과</li>
+                </ul>
+            </section>   
+            <div class="sec-background"></div>
+        </nav>
+        
+    </header>
+    <div class="main"></div>
+
+    <script>
+        const se = document.querySelector('.se');
+        const nav = document.querySelector('nav');
+
+        se.addEventListener('click', () => {
+        nav.classList.toggle('is-active');
+        });
+
+        const cancell = document.querySelector('.cancell');
+        
+
+        cancell.addEventListener('click', () => {
+        nav.classList.toggle('is-active');
+        });
+    </script>
+</body>
+</html>

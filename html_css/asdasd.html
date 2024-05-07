@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>반응형 검색창</title>
+<style>
+/* 기본 스타일 */
+.search-container {
+  position: relative;
+  margin: 20px;
+}
+
+.search-input {
+  width: 200px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 599px) {
+  .search-input {
+    width: 0; /* 검색창 숨기기 */
+    overflow: hidden;
+    transition: width 0.4s ease-in-out;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="search-container">
+  <input type="text" class="search-input" id="myInput" placeholder="검색어를 입력하세요...">
+  <div class="search-icon" id="searchIcon">&#128269;</div>
+</div>
+
+<script>
+// JavaScript를 사용하여 검색 아이콘을 클릭했을 때 동작을 추가합니다.
+document.getElementById("searchIcon").addEventListener("click", function() {
+  var input = document.getElementById("myInput");
+  if (input.style.width === "200px") {
+    input.style.width = "0";
+    input.value = "";
+    document.getElementById("searchIcon").style.display = "block"; // 검색창이 없을 때 돋보기 아이콘 표시
+  } else {
+    input.style.width = "200px";
+    input.focus();
+    document.getElementById("searchIcon").style.display = "none"; // 검색창이 있을 때 돋보기 아이콘 숨김
+  }
+});
+</script>
+
+</body>
+</html>

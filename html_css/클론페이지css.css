@@ -1,0 +1,57 @@
+html,body{
+    position: relative;
+}
+body{
+    margin: 0;
+    font-family: "HyundaiKRRegular", 'HyundaiRegular', 'HyundaiTextRegular', 'Malgun Gothic', Dotum, '돋움', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', '굴림', arial, sans-serif;
+    color: #000;
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+}
+.gnb{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    min-width: 1240px;
+    min-height: 80px;
+    color: #999;
+}
+.inner{
+    width: 1120px;
+    margin: 0 auto;
+    padding-top: 21px;
+}
+.gnb,.logo{
+    float: left;
+    width: 155px;
+    margin-right: 50px;
+    padding-top: 4px;
+}
+.gnb .logo img {
+    width: 100%;
+}
+img {
+    border: 0;
+    vertical-align: top;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.blank{
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.gnb .logo-default {
+    display: none;
+}
+.main{
+    background-color: yellow;
+    height: 2000px;
+}
