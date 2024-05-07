@@ -18,6 +18,9 @@ const Home = () => {
       <p>
         <Link to="/age/20">나이 전달 하기</Link>
       </p>
+      <p>
+        <Link to="/Articles">게시판 목록</Link>
+      </p>
     </>
   );
 };
