@@ -1,12 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Axios from "./Axios";
+import NewsList from "./NewsList";
+import NewsItem from "./NewsItem";
+import axios from "axios";
 import News from "./News";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserStore from "./context/UserStore";
+import ImageUploader from "./pages/ImageUploader";
+
 function App() {
   return (
-    <>
-      <News></News>
-    </>
+    <UserStore>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ImageUploader />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Home" element={<Home />} />
+        </Routes>
+      </Router>
+    </UserStore>
   );
 }
 
